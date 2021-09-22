@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import fileThree from '@/store/filethree'
+import graph from '@/store/graph'
 
 Vue.use(Vuex)
 
@@ -20,6 +20,6 @@ export default new Vuex.Store({
     }
   },
   modules: {
-    fileThree
+    graph
   }
 })

@@ -1,6 +1,6 @@
 <template lang='pug'>
   Block(
-    block-title='Repository'
+    block-title='Example'
     :grid-area='gridArea'
   )
     template(v-slot:body)
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'Card',
+  name: 'Example',
   props: {
     gridArea: {
       type: String,

@@ -1,4 +1,4 @@
-# birdpull.
+# Graph constructor.
 
 ## Project setup
 ```
