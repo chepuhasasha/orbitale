@@ -91,6 +91,7 @@ export default {
 .schema-item {
   display: flex;
   gap: 5px;
+  align-items: center;
   &_line {
     display: flex;
     justify-content: space-between;
