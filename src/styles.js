@@ -5,10 +5,13 @@ const styles = {
       background_100: '#2C2C2C',
       background_200: '#393939',
       text_primary: '#F1F3F6',
+      text_secondary: '#999999',
       hover_0: '#1F1F1F',
       hover_100: '#393939',
       primary_0: '#18A0FB',
       primary_100: '#0B8FE8',
+      danger_0: '#FF5A26',
+      danger_100: '#FF3D00',
     },
     light: {
       background_0: '#F1F3F6',

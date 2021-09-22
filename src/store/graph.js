@@ -4,7 +4,7 @@ export default {
   state: {
     name: '#1',
     id: 1,
-    description: 'MAIN',
+    description: 'MAIN dslfkepokfo pokewpok pkpekwpok pokwepfok poekwe erg eg ew ewg wwe ew wgee wg ewg weg weg ewgheafpfokwepo pokwepfk pokwep pokewf',
     childs: []
   },
 

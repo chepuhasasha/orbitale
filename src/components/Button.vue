@@ -47,6 +47,14 @@ export default {
     active: {
       type: Boolean,
       default: false
+    },
+    /**
+     * danger button
+     * @values true, false
+     */
+    danger: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -55,6 +63,7 @@ export default {
       return {
         [this.$style.active]: this.active, 
         [this.$style.disable]: this.disable,
+        [this.$style.danger]: this.danger,
         [this.$style.icon]: !this.text
       }
     },
@@ -94,6 +103,7 @@ export default {
   line-height: 13px;
   width: max-content;
   color: var(--text_primary);
+  border-radius: 2px;
   &:hover {
     color: white;
     background: var(--primary_100);
@@ -113,6 +123,13 @@ export default {
   background: var(--background_0);
   &:hover {
     background: var(--background_0);
+  }
+}
+
+.danger {
+  background: var(--danger_0);
+  &:hover {
+    background: var(--danger_100);
   }
 }
 
