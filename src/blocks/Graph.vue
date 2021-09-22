@@ -1,6 +1,6 @@
 <template lang='pug'>
   Block(
-    block-title='Graph'
+    block-title='list'
     :grid-area='gridArea'
   )
     template(v-slot:body)

@@ -1,6 +1,6 @@
 <template lang='pug'>
   Block(
-    block-title='GraphSchema'
+    block-title='mindgraph.'
     :grid-area='gridArea'
   )
     template(v-slot:body)
