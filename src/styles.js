@@ -2,7 +2,7 @@ const styles = {
   themes: {
     dark: {
       background_0: '#1F1F1F',
-      background_100: '#2C2C2C',
+      background_100: '#181818',
       background_200: '#393939',
       text_primary: '#F1F3F6',
       text_secondary: '#999999',
