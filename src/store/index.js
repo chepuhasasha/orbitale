@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import graph from '@/store/graph'
+import selected from '@/store/selected'
 
 Vue.use(Vuex)
 
@@ -20,6 +21,7 @@ export default new Vuex.Store({
     }
   },
   modules: {
-    graph
+    graph,
+    selected
   }
 })

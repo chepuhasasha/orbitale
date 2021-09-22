@@ -1,6 +1,8 @@
 <template lang='pug'>
   .schema-item(:title='graph.name')
-    .schema-item_head
+    .schema-item_head(
+      @click='setTask(graph)'
+      :class='{ [$style.selected]: selected === graph || isSelected}')
       .schema-item_title
         font-awesome-icon(v-if='graph.icon' :icon='graph.icon')
         .schema-item_name {{ graph.name }} 
@@ -24,8 +26,12 @@
         @click='' 
         :danger='true'
       )
-    transition-group.schema-item_childs(name='slide-fade' tag='div')
+    transition-group.schema-item_childs(
+      name='slide-fade'
+      tag='div'
+    )
       SchemaItem(
+        :isSelected='selected === graph'
         :graph='item'
         :key='i'
         v-for='(item, i) in graph.childs'
@@ -34,6 +40,7 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 import { Graph } from '@/mixin'
 
 export default {
@@ -45,7 +52,13 @@ export default {
     graph: {
       type: Object,
       require: true
-    }
+    },
+    
+    isSelected: {
+      type: Boolean,
+      require: true
+    },
+
   },
   data: () => {
     return {
@@ -54,7 +67,15 @@ export default {
     }
   },
   mixins: [Graph],
+  computed: {
+    ...mapState({
+      selected: state => state.selected.task
+    })
+  },
   methods: {
+    ...mapActions({
+      setTask: 'selected/setTask'
+    }),
     add() {
       this.addGraph(this.graph, this.title, this.description)
     },
@@ -123,5 +144,10 @@ export default {
     flex-direction: column;
     gap: 5px;
   }
+}
+</style>
+<style lang="scss" module>
+.selected {
+  box-shadow: 0px 0px 0px 1px var(--primary_0);
 }
 </style>
