@@ -2,6 +2,10 @@ export default {
   namespaced: true,
 
   state: {
+    name: '#1',
+    id: 1,
+    description: 'MAIN',
+    childs: []
   },
 
   mutations: {

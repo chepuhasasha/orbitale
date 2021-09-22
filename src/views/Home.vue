@@ -1,6 +1,7 @@
 <template lang='pug'>
   .home
-    Example(grid-area='1/1/5/5')
+    Graph(grid-area='1/1/11/2')
+    GraphSchema(grid-area='1/2/11/9')
 </template>
 
 <script>
@@ -9,11 +10,12 @@ import { mapState } from 'vuex'
 export default {
   name: 'Home',
   components: {
-    Example: () => import('@/blocks/Example.vue'),
+    Graph: () => import('@/blocks/Graph.vue'),
+    GraphSchema: () => import('@/blocks/GraphSchema.vue'),
   },
   computed: {
     ...mapState({
-      file: state => state.fileThree.file
+      graph: state => state.graph
     })
   }
 }
