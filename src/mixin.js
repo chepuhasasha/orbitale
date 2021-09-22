@@ -5,6 +5,7 @@ const Graph = {
       parent.childs.push({
         id: Math.round(Math.random(new Date().getTime()) * 1000000),
         name: title,
+        icon: 'skull-crossbones',
         description,
         childs: []
       });

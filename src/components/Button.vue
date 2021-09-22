@@ -55,6 +55,22 @@ export default {
     danger: {
       type: Boolean,
       default: false
+    },
+    /**
+     * warning button
+     * @values true, false
+     */
+    warning: {
+      type: Boolean,
+      default: false
+    },
+    /**
+     * sucsess button
+     * @values true, false
+     */
+    sucsess: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -64,6 +80,8 @@ export default {
         [this.$style.active]: this.active, 
         [this.$style.disable]: this.disable,
         [this.$style.danger]: this.danger,
+        [this.$style.warning]: this.warning,
+        [this.$style.sucsess]: this.sucsess,
         [this.$style.icon]: !this.text
       }
     },
@@ -130,6 +148,18 @@ export default {
   background: var(--danger_0);
   &:hover {
     background: var(--danger_100);
+  }
+}
+.warning {
+  background: var(--warning_0);
+  &:hover {
+    background: var(--warning_100);
+  }
+}
+.sucsess {
+  background: var(--sucsess_0);
+  &:hover {
+    background: var(--sucsess_100);
   }
 }
 

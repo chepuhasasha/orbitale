@@ -4,7 +4,8 @@
     :grid-area='gridArea'
   )
     template(v-slot:body)
-      SchemaItem(:graph='graph')
+      .schema
+        SchemaItem(:graph='graph')
 </template>
 
 <script>
@@ -31,4 +32,9 @@ export default {
 </script>
 
 <style lang='scss'>
+.schema {
+  width: max-content;
+  height: max-content;
+  margin: auto;
+}
 </style>

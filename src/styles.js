@@ -12,6 +12,10 @@ const styles = {
       primary_100: '#0B8FE8',
       danger_0: '#FF5A26',
       danger_100: '#FF3D00',
+      warning_0: '#FFB800',
+      warning_100: '#FFD465',
+      sucsess_0: '#CDFF64',
+      sucsess_100: '#AAD44F',
     },
     light: {
       background_0: '#F1F3F6',

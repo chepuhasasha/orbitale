@@ -2,25 +2,35 @@
   .schema-item(:title='graph.name')
     .schema-item_head
       .schema-item_title
-        Button(icon='check-circle' @click='remove' :sucsess='true')
-        .schema-item_name {{ graph.name }}
+        font-awesome-icon(v-if='graph.icon' :icon='graph.icon')
+        .schema-item_name {{ graph.name }} 
         Button(icon='trash-alt' @click='remove' :danger='true')
       .schema-item_desc {{ graph.description }}
+      .ROW
+        Button(icon='skull-crossbones' @click='' :danger='true')
+        Button(icon='exclamation' @click='' :warning='true')
+        Button(icon='check-circle' @click='' :sucsess='true')
+        Button(icon='pen' @click='')
     .schema-item_line
       .ROW
-        Button(icon='minus-circle' @click='minimize')
+        Button(
+          v-if='graph.childs[0]'
+          icon='eye'
+          @click='minimize')
         Button(icon='plus' @click='add')
       Button(
-        v-if='graph.childs[0]'
+        v-if='graph.childs[1]'
         icon='trash-alt'
-        @click='removeAll' 
+        @click='' 
         :danger='true'
       )
-    .schema-item_childs
+    transition-group.schema-item_childs(name='slide-fade' tag='div')
       SchemaItem(
         :graph='item'
+        :key='i'
         v-for='(item, i) in graph.childs'
       )
+
 </template>
 
 <script>
@@ -73,10 +83,10 @@ export default {
     writing-mode: vertical-lr;
   }
   &_head {
-    min-width: 150px;
-    max-width: 150px;
-    min-height: 120px;
-    max-height: 120px;
+    min-width: 146px;
+    max-width: 146px;
+    min-height: 106px;
+    max-height: 106px;
     background: var(--background_0);
     padding: 10px;
     border-radius: 6px;
@@ -96,7 +106,8 @@ export default {
     color: var(--text_secondary);
     max-width: 100%;
     max-height: 100%;
-    overflow-y: auto;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
   }
 
   &_name {
