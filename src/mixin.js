@@ -7,6 +7,7 @@ const Graph = {
         name: title,
         icon: 'skull-crossbones',
         description,
+        status: '',
         childs: []
       });
     }
