@@ -1,4 +1,4 @@
-# Graph constructor.
+# mindgraph.
 
 ## Project setup
 ```
