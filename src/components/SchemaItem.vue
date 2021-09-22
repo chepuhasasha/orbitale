@@ -27,6 +27,7 @@
         :danger='true'
       )
     transition-group.schema-item_childs(
+      :class='{ [$style.selected_all]: selected === graph && graph.childs[0] || isSelected && graph.childs[0]}'
       name='slide-fade'
       tag='div'
     )
@@ -150,5 +151,10 @@ export default {
 <style lang="scss" module>
 .selected {
   box-shadow: 0px 0px 0px 1px var(--primary_0);
+}
+.selected_all {
+  border-radius: 6px;
+  border: 1px dashed rgba(11, 143, 232, 0.2);
+  padding: 10px;
 }
 </style>
