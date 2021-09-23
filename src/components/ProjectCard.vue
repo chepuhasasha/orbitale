@@ -6,6 +6,8 @@
     @click='select(project)'
   )
     template(v-slot:tools)
+      .ROW  
+        Avatar(:width='25')
       .ROW
         Button(icon='pen')
         Button(icon='trash-alt' :danger='true')
@@ -23,6 +25,7 @@ export default {
   components: {
     Card: () => import('@/templates/Card.vue'),
     Button: () => import('@/components/Button.vue'),
+    Avatar: () => import('@/components/Avatar.vue'),
   },
 
   props: {
