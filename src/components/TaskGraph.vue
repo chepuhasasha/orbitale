@@ -13,9 +13,11 @@
         .ROW
           Button(icon='trash-alt' :danger='true' @click='deleteTask(graph.id)')
       template(v-slot:body)
-        .COL
+        .COL(
+          @mouseover="upHere = true"
+          @mouseleave="upHere = false")
           pre.description.subtext {{ graph.description }}
-          .ROW
+          .ROW(v-if='upHere')
             Button(icon='skull-crossbones' @click='' :danger='true')
             Button(icon='exclamation' @click='' :warning='true')
             Button(icon='check-circle' @click='' :sucsess='true')
@@ -57,6 +59,7 @@ export default {
   },
   data: () => {
     return {
+      upHere: false,
       task: {
         name: 'Task 1',
         description: 'test task',
