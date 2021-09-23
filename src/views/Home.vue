@@ -1,7 +1,7 @@
 <template lang='pug'>
   .home
     Projects(grid-area='1/1/11/2')
-    GraphSchema(grid-area="1/2/11/7")
+    Graph(grid-area="1/2/11/7")
     Details(grid-area="1/7/11/9")
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   name: 'Home',
   components: {
-    GraphSchema: () => import('@/blocks/GraphSchema.vue'),
+    Graph: () => import('@/blocks/Graph.vue'),
     Projects: () => import('@/blocks/Projects.vue'),
     Details: () => import('@/blocks/Details.vue'),
   },

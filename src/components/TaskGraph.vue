@@ -1,16 +1,51 @@
 <template lang='pug'>
-  .schema-item
-    pre {{ graph }}
+  .task
+    Card(
+      :card-title='graph.name'
+      cursor='pointer'
+    )
+      template(v-slot:header) 
+        .ROW.title
+          .text {{ graph.name }}
+      template(v-slot:tools)
+        .ROW
+          Button(icon='trash-alt' :danger='true')
+      template(v-slot:body)
+        .COL
+          .description.subtext {{ graph.description }}
+          .ROW
+            Button(icon='skull-crossbones' @click='' :danger='true')
+            Button(icon='exclamation' @click='' :warning='true')
+            Button(icon='check-circle' @click='' :sucsess='true')
+            Button(icon='pen' @click='')
+    .task_line
+      .ROW
+        Button(
+          v-if='graph.childs[0]'
+          icon='eye'
+        )
+        Button(icon='plus' @click='add')
+      Button(
+        v-if='graph.childs[1]'
+        icon='trash-alt'
+        :danger='true'
+      )
+    .task_childs
+      TaskGraph(
+        v-for='(child, i) in graph.childs'
+        :key='i'
+        :graph='child'
+      )
 </template>
 
 <script>
 import { mapActions, mapState } from 'vuex'
-import { Graph } from '@/mixin'
 
 export default {
-  name: 'SchemaItem',
+  name: 'TaskGraph',
   components: {
-    Button: () => import('@/components/Button.vue')
+    Button: () => import('@/components/Button.vue'),
+    Card: () => import('@/templates/Card.vue'),
   },
   props: {
     graph: {
@@ -26,11 +61,12 @@ export default {
   },
   data: () => {
     return {
-      title: 'Title',
-      description: 'desctiption'
+      task: {
+        name: 'Task 1',
+        description: 'test task',
+      }
     }
   },
-  mixins: [Graph],
   computed: {
     ...mapState({
       selected: state => state.selected.task
@@ -41,18 +77,29 @@ export default {
       setTask: 'selected/setTask'
     }),
     add() {
-      this.addGraph(this.graph, this.title, this.description)
+      const d = new Date().getMilliseconds()
+      const task = {
+        id: d,
+        name: this.task.name,
+        parent_node: this.graph.id,
+        project: this.graph.project,
+        type: 'feature',
+        executors: ['user#1'],
+        owner: 'user#1',
+        position: {x: 100, y: 100},
+        born: new Date().now(),
+        daedline: '',
+        status: 'default',
+        description: this.task.description,
+      }
+      this.graph.childs.push(task)
     },
-    remove() {
-    },
-    minimize() {
-    }
   }
 }
 </script>
 
 <style lang='scss'>
-.schema-item {
+.task {
   display: flex;
   gap: 5px;
   // align-items: center;

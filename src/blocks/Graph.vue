@@ -5,7 +5,7 @@
   )
     template(v-slot:body)
       .schema
-        SchemaItem(:graph='getGraph')
+        TaskGraph(:graph='getGraph')
 </template>
 
 <script>
@@ -21,7 +21,7 @@ export default {
   },
   components: {
     Block: () => import('@/templates/Block.vue'),
-    SchemaItem: () => import('@/components/SchemaItem.vue'),
+    TaskGraph: () => import('@/components/TaskGraph.vue'),
   },
   data: () => {
     return {
