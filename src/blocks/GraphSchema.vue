@@ -5,7 +5,7 @@
   )
     template(v-slot:body)
       .schema
-        SchemaItem(:graph='graph')
+        SchemaItem(:graph='getGraph')
 </template>
 
 <script>
@@ -23,11 +23,37 @@ export default {
     Block: () => import('@/templates/Block.vue'),
     SchemaItem: () => import('@/components/SchemaItem.vue'),
   },
+  data: () => {
+    return {
+      graph: {}
+    }
+  },
   computed: {
-  ...mapState({
-    graph: state => state.graph
-  })
-}
+    ...mapState({
+      tasks: state => state.tasks.tasks,
+    }),
+    getGraph(){
+      const taskIdsByIndex = {};
+      const root = [];
+      let child;
+    
+      this.tasks.forEach((task,i) => {
+        this.$set(task, 'childs', [])
+        taskIdsByIndex[task.id] = i
+      })
+
+      this.tasks.forEach(task => {
+        child = task
+        if (child.parent_node !== null) {
+          this.tasks[taskIdsByIndex[task.parent_node]].childs.push(child);
+        } else {
+          root.push(child);
+        }
+      })
+      return root[0];
+    }
+  },
+
 }
 </script>
 

@@ -27,16 +27,16 @@ export default {
     ProjectCard: () => import('@/components/ProjectCard.vue')
   },
   computed: {
-  ...mapState({
-    projects: state => state.projects.projects,
-    selected: state => state.projects.active
-  }),
+    ...mapState({
+      projects: state => state.projects.projects,
+      selected: state => state.projects.active
+    }),
+  },
   methods: {
     ...mapActions({
       addProject: 'projects/addProject'
     })
   }
-}
 }
 </script>
 

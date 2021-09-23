@@ -1,6 +1,43 @@
 <template lang='pug'>
-  .schema-item
-    pre {{ graph }}
+  .schema-item(:title='graph.name')
+    .schema-item_head(
+      @click='setTask(graph)'
+      :class='{ [$style.selected]: selected === graph || isSelected}')
+      .schema-item_title
+        font-awesome-icon(v-if='graph.icon' :icon='graph.icon')
+        .schema-item_name {{ graph.name }} 
+        Button(icon='trash-alt' @click='remove' :danger='true')
+      .schema-item_desc {{ graph.description }}
+      .ROW
+        Button(icon='skull-crossbones' @click='' :danger='true')
+        Button(icon='exclamation' @click='' :warning='true')
+        Button(icon='check-circle' @click='' :sucsess='true')
+        Button(icon='pen' @click='')
+    .schema-item_line
+      .ROW
+        Button(
+          v-if='graph.childs[0]'
+          icon='eye'
+          @click='minimize')
+        Button(icon='plus' @click='add')
+      Button(
+        v-if='graph.childs[1]'
+        icon='trash-alt'
+        @click='' 
+        :danger='true'
+      )
+    transition-group.schema-item_childs(
+      :class='{ [$style.selected_all]: selected === graph && graph.childs[0] || isSelected && graph.childs[0]}'
+      name='slide-fade'
+      tag='div'
+    )
+      SchemaItem(
+        :isSelected='selected === graph'
+        :graph='item'
+        :key='i'
+        v-for='(item, i) in graph.childs'
+      )
+
 </template>
 
 <script>
