@@ -74,12 +74,11 @@ export default {
   },
   methods: {
     ...mapActions({
-      setTask: 'selected/setTask'
+      addTask: 'tasks/addTask'
     }),
     add() {
-      const d = new Date().getMilliseconds()
       const task = {
-        id: d,
+        id: new Date().getMilliseconds(),
         name: this.task.name,
         parent_node: this.graph.id,
         project: this.graph.project,
@@ -87,12 +86,12 @@ export default {
         executors: ['user#1'],
         owner: 'user#1',
         position: {x: 100, y: 100},
-        born: new Date().now(),
+        born: new Date(),
         daedline: '',
         status: 'default',
         description: this.task.description,
       }
-      this.graph.childs.push(task)
+      this.addTask(task)
     },
   }
 }
