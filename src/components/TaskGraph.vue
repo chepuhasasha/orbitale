@@ -3,7 +3,8 @@
     Card(
       :card-title='graph.name'
       cursor='pointer'
-      @click='select(graph)'
+      @click='select(graph)',
+      :selected='isSelected'
     )
       template(v-slot:header) 
         .ROW.title
@@ -52,13 +53,7 @@ export default {
     graph: {
       type: Object,
       require: true
-    },
-    
-    isSelected: {
-      type: Boolean,
-      require: true
-    },
-
+    }
   },
   data: () => {
     return {
@@ -71,7 +66,11 @@ export default {
   computed: {
     ...mapState({
       selected: state => state.selected.graph
-    })
+    }),
+
+    isSelected() {
+      return this.selected === this.graph
+    }
   },
   methods: {
     ...mapActions({
