@@ -34,23 +34,25 @@ export default {
     }),
     getGraph(){
       const taskIdsByIndex = {};
-      const root = [];
+      const graph = JSON.parse(JSON.stringify(this.tasks));
+      let root = {};
       let child;
-    
-      this.tasks.forEach((task,i) => {
-        this.$set(task, 'childs', [])
+      /* eslint-disable */
+      graph.forEach((task,i) => {
+        task.childs = []
         taskIdsByIndex[task.id] = i
       })
-
-      this.tasks.forEach(task => {
+      /* eslint-enable */
+      graph.forEach(task => {
         child = task
         if (child.parent_node !== null) {
-          this.tasks[taskIdsByIndex[task.parent_node]].childs.push(child);
+          graph[taskIdsByIndex[task.parent_node]].childs.push(child);
         } else {
-          root.push(child);
+          root = child
         }
       })
-      return root[0];
+
+      return root;
     }
   },
 

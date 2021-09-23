@@ -73,6 +73,11 @@ export default {
     ADD_TASK(state, value) {
       state.tasks.push(value);
     },
+    DELETE_TASK(state, value) {
+      const task = state.tasks.filter(item => item.id === value)[0]
+      const index = state.tasks.indexOf(task)
+      state.tasks.splice(index, 1)
+    },
   },
 
   actions: {
@@ -84,6 +89,9 @@ export default {
     },
     addTask({ commit }, value) {
       commit("ADD_TASK", value);
+    },
+    deleteTask({ commit }, value) {
+      commit("DELETE_TASK", value);
     },
   }
 };

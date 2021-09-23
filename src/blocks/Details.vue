@@ -4,7 +4,10 @@
     :grid-area='gridArea'
   )
     template(v-slot:body)
-      .COL {{ selected }}
+      .COL(v-if='selectedTask')
+        input(v-model='selectedTask.name')
+        textarea(v-model='selectedTask.description')
+      pre {{ selectedTask }}
 </template>
 
 <script>
@@ -23,7 +26,7 @@ export default {
   },
   computed: {
   ...mapState({
-    selected: state => state.selected.graph
+    selectedTask: state => state.selected.task,
   })
 }
 }

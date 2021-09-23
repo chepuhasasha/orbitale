@@ -11,10 +11,10 @@
           .text {{ graph.name }}
       template(v-slot:tools)
         .ROW
-          Button(icon='trash-alt' :danger='true')
+          Button(icon='trash-alt' :danger='true' @click='deleteTask(graph.id)')
       template(v-slot:body)
         .COL
-          .description.subtext {{ graph.description }}
+          pre.description.subtext {{ graph.description }}
           .ROW
             Button(icon='skull-crossbones' @click='' :danger='true')
             Button(icon='exclamation' @click='' :warning='true')
@@ -65,7 +65,8 @@ export default {
   },
   computed: {
     ...mapState({
-      selected: state => state.selected.graph
+      selected: state => state.selected.graph,
+      tasks: state => state.tasks.tasks,
     }),
 
     isSelected() {
@@ -75,7 +76,9 @@ export default {
   methods: {
     ...mapActions({
       addTask: 'tasks/addTask',
-      select: 'selected/setGraph',
+      deleteTask: 'tasks/deleteTask',
+      selectGraph: 'selected/setGraph',
+      selectTask: 'selected/setTask',
     }),
     add() {
       const task = {
@@ -94,6 +97,11 @@ export default {
       }
       this.addTask(task)
     },
+
+    select(graph) {
+      this.selectGraph(graph)
+      this.selectTask(this.tasks.filter(el => el.id === graph.id)[0])
+    }
   }
 }
 </script>
