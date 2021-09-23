@@ -50,14 +50,14 @@ export default {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  color: var(--text_primary);
+  color: var(--text_0);
   &_header {
     font-family: Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 13px;
     line-height: 13px;
-    color: var(--text_primary);
+    color: var(--text_0);
     margin-bottom: 10px;
   }
 
