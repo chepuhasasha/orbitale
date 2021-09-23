@@ -3,6 +3,7 @@
     Card(
       :card-title='graph.name'
       cursor='pointer'
+      @click='select(graph)'
     )
       template(v-slot:header) 
         .ROW.title
@@ -69,12 +70,13 @@ export default {
   },
   computed: {
     ...mapState({
-      selected: state => state.selected.task
+      selected: state => state.selected.graph
     })
   },
   methods: {
     ...mapActions({
-      addTask: 'tasks/addTask'
+      addTask: 'tasks/addTask',
+      select: 'selected/setGraph',
     }),
     add() {
       const task = {

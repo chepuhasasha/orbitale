@@ -23,7 +23,7 @@ export default {
   },
   computed: {
   ...mapState({
-    selected: state => state.selected.task
+    selected: state => state.selected.graph
   })
 }
 }

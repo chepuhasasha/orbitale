@@ -2,18 +2,18 @@ export default {
   namespaced: true,
 
   state: {
-    task: null
+    graph: null
   },
 
   mutations: {
-    SET_TASK(state, value) {
-      state.task = value;
+    SET_GRAPH(state, value) {
+      state.graph = value;
     },
   },
 
   actions: {
-    setTask({ commit }, value) {
-      commit("SET_TASK", value);
+    setGraph({ commit }, value) {
+      commit("SET_GRAPH", value);
     },
   }
 };
