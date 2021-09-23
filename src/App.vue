@@ -32,6 +32,19 @@ export default {
   display: flex;
   gap: 10px;
 }
+.COL {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.text {
+  color:  var(--text_0);
+  font-size: var(--text_size_0);
+}
+.subtext {
+  color:  var(--text_100);
+  font-size: var(--text_size_100);
+}
 
 #app {
   height: 100%;

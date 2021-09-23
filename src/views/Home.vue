@@ -1,9 +1,7 @@
 <template lang='pug'>
   .home
-    //- Graph(grid-area='1/1/11/2')
-    GraphSchema(:grid-area='task ? "1/1/11/7":"1/1/11/9"')
-    transition(name='slide-fade' tag='div')
-      Details(v-if='task' grid-area='1/7/11/9')
+    Projects(:grid-area='task ? "1/1/11/7":"1/1/11/9"')
+    //- GraphSchema(:grid-area='task ? "1/1/11/7":"1/1/11/9"')
 </template>
 
 <script>
@@ -12,9 +10,8 @@ import { mapState } from 'vuex'
 export default {
   name: 'Home',
   components: {
-    Details: () => import('@/blocks/Details.vue'),
-    // Graph: () => import('@/blocks/Graph.vue'),
     GraphSchema: () => import('@/blocks/GraphSchema.vue'),
+    Projects: () => import('@/blocks/Projects.vue'),
   },
   computed: {
     ...mapState({

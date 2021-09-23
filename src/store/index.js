@@ -4,6 +4,9 @@ import Vuex from 'vuex'
 import graph from '@/store/graph'
 import selected from '@/store/selected'
 
+import projects from '@/store/projects'
+import tasks from '@/store/tasks'
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -22,6 +25,8 @@ export default new Vuex.Store({
   },
   modules: {
     graph,
-    selected
+    selected,
+    projects,
+    tasks
   }
 })

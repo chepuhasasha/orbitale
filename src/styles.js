@@ -4,8 +4,9 @@ const styles = {
       background_0: '#1F1F1F',
       background_100: '#181818',
       background_200: '#393939',
-      text_primary: '#F1F3F6',
-      text_secondary: '#999999',
+      text_0: '#F1F3F6',
+      text_100: '#999999',
+      text_200: '#999999',
       hover_0: '#1F1F1F',
       hover_100: '#393939',
       primary_0: '#18A0FB',
@@ -16,6 +17,8 @@ const styles = {
       warning_100: '#FFD465',
       sucsess_0: '#CDFF64',
       sucsess_100: '#AAD44F',
+      text_size_0: '14px',
+      text_size_100: '12px'
     },
     light: {
       background_0: '#F1F3F6',
