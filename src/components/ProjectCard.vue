@@ -5,9 +5,11 @@
     :selected='isSelected'
     @click='select(project)'
   )
-    template(v-slot:tools)
-      .ROW  
+    template(v-slot:header) 
+      .ROW.title
         Avatar(:width='25')
+        .text {{ project.name }}
+    template(v-slot:tools)
       .ROW
         Button(icon='pen')
         Button(icon='trash-alt' :danger='true')
@@ -53,6 +55,9 @@ export default {
 </script>
 
 <style lang='scss' scoped>
+.title {
+  align-items: center;
+}
 .description {
   height: 50px;
   overflow: hidden;

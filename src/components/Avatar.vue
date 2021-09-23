@@ -13,7 +13,7 @@ export default {
 
     pattern: {
       type: String,
-      default: `10100110#01100110#01101110#10100110#11100110#10100110#11110100#11100110`
+      default: `00000000#01000010#00100100#01111110#01011010#00100100#01000010#00000000`
     }
   },
   data: () => {
@@ -46,7 +46,7 @@ export default {
       pattern.forEach((row, j) => {
         row.forEach((item, i) => {
           this.ctx.save()
-          this.ctx.fillStyle = item === '1' ? 'white' : 'black'
+          this.ctx.fillStyle = item === '1' ? 'black' : 'white'
           this.ctx.fillRect(i * size, j * size , size, size)
           this.ctx.fill()
           this.ctx.restore()

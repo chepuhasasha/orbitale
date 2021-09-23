@@ -1,7 +1,8 @@
 <template lang='pug'>
   .card.COL(:style='{cursor}' :class='getClasses' @click='$emit("click")')
     .card_header.text.ROW
-      slot(name='header') {{ cardTitle }}
+      slot(name='header')
+        .card_header_title {{ cardTitle }}
       slot(name='tools')
     .card_body.COL
       slot(name='body')
@@ -59,6 +60,9 @@ export default {
   color: var(--text_0);
   &_header {
     justify-content: space-between;
+    &_title {
+      width: 100%;
+    }
   }
 
   &_body {
