@@ -1,6 +1,6 @@
 # orbitale.
 
-![Иллюстрация к проекту](https://github.com/sashachepuha/mindgraph/blob/main/Group%2018.png)
+![Logo](https://github.com/sashachepuha/orbitale/blob/ebc092296538edaa0bb5b18936423dc3520ef2bc/logo.png)
 
 ## Project setup
 ```
