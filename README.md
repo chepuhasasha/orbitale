@@ -1,4 +1,6 @@
-# mindgraph.
+# orbitale.
+
+![Иллюстрация к проекту](https://github.com/sashachepuha/mindgraph/blob/main/Group%2018.png)
 
 ## Project setup
 ```
