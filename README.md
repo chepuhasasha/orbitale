@@ -1,4 +1,3 @@
-![Logo](https://github.com/sashachepuha/orbitale/blob/ebc092296538edaa0bb5b18936423dc3520ef2bc/logo.png)
 ![Caver](https://github.com/sashachepuha/orbitale/blob/4a10023df29286ea4f883bc7d9870e88cc63156c/caver.png)
 
 ## Project setup
