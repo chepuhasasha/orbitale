@@ -1,30 +1,24 @@
 <template lang='pug'>
-  .home
-    Projects(grid-area='1/1/11/2')
-    Graph(grid-area="1/2/11/7")
-    Details(grid-area="1/7/11/9")
+  .grid
+    .COL.FILL_HEIGHT(:style='{gridArea: "7/4/8/8"}')
+      h1 orbitale.
+      h5 monitoring face
+      section Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      .ROW_R
+        Button(text='GitHub' :fill='false')
+        Button(text='Try now!')
 </template>
 
 <script>
 export default {
   name: 'Home',
   components: {
-    Graph: () => import('@/blocks/Graph.vue'),
-    Projects: () => import('@/blocks/Projects.vue'),
-    Details: () => import('@/blocks/Details.vue'),
-  },
+    Button: () => import('@/components/UI/Button.vue')
+  }
 }
 </script>
 
 <style lang='scss'>
-.home {
-  display: grid;
-  height: 100%;
-  width: 100%;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-gap: 1px;
-}
 
 .slide-fade-enter-active {
   transition: all .3s ease;

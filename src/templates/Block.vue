@@ -45,7 +45,7 @@ export default {
 
 <style lang='scss'>
 .block {
-  background: var(--background_100);
+  background: var(--background_0);
   border-radius: 0px;
   padding: 20px;
   display: flex;
