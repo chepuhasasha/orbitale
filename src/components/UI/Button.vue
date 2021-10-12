@@ -44,6 +44,7 @@ export default {
   background:white;
   color: rgb(48, 48, 48);
   border-radius: 6px;
+  border: 1px solid white;
   &:hover {
     background: #f1f3f6;
   }
@@ -53,6 +54,7 @@ export default {
 <style lang="scss" module>
 .active {
   background:rgb(0, 174, 255);
+  border: 1px solid rgb(0, 174, 255);
   color: white;
   &:hover {
     background:rgb(63, 194, 255);
