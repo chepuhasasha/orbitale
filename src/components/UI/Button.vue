@@ -4,6 +4,7 @@
     tag='button'
     :class='getClasses'
     align='center'
+    v-bind='$attrs'
     )
     slot
     font-awesome-icon(v-if='icon' :icon='icon')

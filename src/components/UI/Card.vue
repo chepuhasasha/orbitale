@@ -1,9 +1,9 @@
 <template lang='pug'>
-  Flex.card(col padding='20px')
-    Flex.card_header(fillW)
+  Flex.card(col padding='20px' v-bind='$attrs')
+    Flex.card_header(fillW padding='0')
       slot(name='header')
-        span Header
-    Flex.card_header(fillW col)
+        h5 Header
+    Flex.card_header(fillW col padding='0')
       slot(name='body')
         span body
         span body

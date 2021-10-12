@@ -1,5 +1,5 @@
 <template lang='pug'>
-  component(:is='tag').flex(:style='getStyle')
+  component.flex(:style='getStyle' :is='tag')
     slot
       .flex_plug
       .flex_plug
@@ -55,6 +55,10 @@ export default {
       type: String,
       default: 'left'
     },
+    alignSelf: {
+      type: String,
+      default: 'left'
+    },
     justify: {
       type: String,
       default: 'left'
@@ -87,6 +91,7 @@ export default {
         result.height = `${this.h}px`
       }
       result.alignItems = this.align
+      result.alignSelf = this.alignSelf
       result.justifyContent = this.justify
       return result
     }
