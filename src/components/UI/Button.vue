@@ -20,7 +20,7 @@ export default {
 
     active: {
       type: Boolean,
-      default: true,
+      default: false,
     },
 
     disable: {
@@ -41,17 +41,22 @@ export default {
 <style lang="scss">
 .button {
   cursor: pointer;
-  background:rgb(0, 174, 255);
-  color: white;
+  background:white;
+  color: rgb(48, 48, 48);
   border-radius: 6px;
   &:hover {
-    background:rgb(63, 194, 255);
+    background: #f1f3f6;
   }
 }
 </style>
 
 <style lang="scss" module>
 .active {
+  background:rgb(0, 174, 255);
+  color: white;
+  &:hover {
+    background:rgb(63, 194, 255);
+  }
 }
 .disable {
 }
