@@ -1,11 +1,11 @@
 <template lang='pug'>
   Flex.nav(fillW tag='nav' justify='space-between' align='center' padding='20px')
     img(:src='require("@/assets/logo.svg")')
-    Flex(fillW justify='center' :gap='20')
+    Flex(fillW justify='center' :gap='20' padding='0')
       router-link(to='/' active-class='active' exact) Home
       router-link(to='/settings' active-class='active') Settings
       router-link(to='/about' active-class='active') About
-    Flex
+    Flex(padding='0')
       Button Sing Up
       Button(active) Sing In
 </template>
