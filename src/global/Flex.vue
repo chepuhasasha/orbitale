@@ -1,6 +1,6 @@
 <template lang='pug'>
   .flex(:style='getStyle')
-    slot(name='content')
+    slot add content.
 </template>
 
 <script>

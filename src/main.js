@@ -8,8 +8,8 @@ import store from './store'
 import router from './router'
 import App from './App.vue'
 
-import Flex from '@/templates/Flex.vue'
-import Grid from '@/templates/Grid.vue'
+import Flex from '@/global/Flex.vue'
+import Grid from '@/global/Grid.vue'
 
 Vue.component('Flex', Flex)
 Vue.component('Grid', Grid)
