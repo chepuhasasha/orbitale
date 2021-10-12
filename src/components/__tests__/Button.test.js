@@ -1,6 +1,6 @@
 /*eslint-disable */
 import { mount } from '@vue/test-utils';
-import Button from '@/components/Button.vue';
+import Button from '@/components/UI/Button.vue';
 
 describe('Button', () => {
   const wrapper = mount(Button);
