@@ -3,7 +3,7 @@
     Flex.card_header(fillW padding='0')
       slot(name='header')
         h5 Header
-    Flex.card_header(fillW col padding='0')
+    Flex.card_body(fillW col padding='0')
       slot(name='body')
         p body
 </template>
