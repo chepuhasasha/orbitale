@@ -1,7 +1,7 @@
 <template lang='pug'>
   Flex.nav(fillW tag='nav' justify='space-between' align='center' padding='20px')
     img(:src='require("@/assets/logo.svg")')
-    Flex(fillW justify='center')
+    Flex(fillW justify='center' :gap='20')
       router-link(to='/' active-class='active' exact) Home
       router-link(to='/settings' active-class='active') Settings
       router-link(to='/about' active-class='active') About
