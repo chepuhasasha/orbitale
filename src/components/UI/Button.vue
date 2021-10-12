@@ -1,52 +1,39 @@
 <template lang="pug">
-  .ROW_C.HUG_WIDTH.HUG_HEIGHT(
-    :class='getClasses'
-  ) {{ text }}
-    //- font-awesome-icon(v-if='icon' :icon='icon')
+  Flex.button(padding='6px 14px' tag='button')
+    slot button
+    font-awesome-icon(v-if='icon' :icon='icon')
 </template>
 <script>
 export default {
   name: 'Button',
   props: {
-    text: {
+    icon: {
       type: String,
-      default: 'Button'
+      default: null
     },
-    fill: {
+
+    active: {
       type: Boolean,
-      default: true
+      default: false,
+    },
+
+    disable: {
+      type: Boolean,
+      default: false,
     }
   },
   computed: {
-    getClasses() {
-      return {
-        [this.$style.fill]: this.fill, 
-        [this.$style.default]: true, 
-      }
-    }
   }
 }
 </script>
-<style lang="scss" module>
-.fill {
-  background: #1784FE !important;
-  color: white !important;
-  &:hover {
-    background: #53a3ff !important;
-  }
+<style lang="scss">
+.button {
 }
+</style>
 
-.default {
-  transition: all ease .3s;
-  background: white;
-  cursor: pointer;
-  padding: 10px 13px;
-  font-size: 12px;
-  font-family: Montserrat;
-  color: #4A4A4A;
-  border-radius: 6px;
-  &:hover {
-    background: #f1f3f6;
-  }
+<style lang="scss" module>
+.active {
+}
+.disable {
 }
 </style>

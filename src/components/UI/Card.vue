@@ -1,5 +1,5 @@
 <template lang='pug'>
-  Flex.card(col :padding='20')
+  Flex.card(col padding='20px')
     Flex.card_header(fillW)
       slot(name='header')
         span Header

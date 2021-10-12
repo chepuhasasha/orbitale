@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .flex(:style='getStyle')
+  component(:is='tag').flex(:style='getStyle')
     slot
       .flex_plug
       .flex_plug
@@ -11,6 +11,10 @@
 export default {
   name: 'Flex',
   props: {
+    tag: {
+      type: String,
+      default: 'div'
+    },
     col: {
       type: Boolean,
       default: false
@@ -44,8 +48,8 @@ export default {
       default: 10
     },
     padding: {
-      type: Number,
-      default: 10
+      type: String,
+      default: '10px'
     },
     align: {
       type: String,
@@ -62,7 +66,7 @@ export default {
       const result = {
         flexDirection: this.col ? 'column' : 'row',
         gap: `${this.gap}px`,
-        padding: `${this.padding}px`,
+        padding: this.padding,
       }
       if(this.hugW) {
         result.width = `max-content`

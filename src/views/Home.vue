@@ -1,12 +1,15 @@
 <template lang='pug'>
-  Card
+  Flex(col)
+    Card
+    Button
 </template>
 
 <script>
 export default {
   name: 'Home',
   components: {
-    Card: () => import('@/components/UI/Card.vue')
+    Card: () => import('@/components/UI/Card.vue'),
+    Button: () => import('@/components/UI/Button.vue'),
   }
 }
 </script>
