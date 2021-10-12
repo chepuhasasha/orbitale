@@ -2,9 +2,9 @@
   Flex.nav(fillW tag='nav' justify='space-between' align='center' padding='20px')
     img(:src='require("@/assets/logo.svg")')
     Flex(fillW justify='center')
-      a Home
-      a Docs
-      a About
+      router-link(to='/' active-class='active' exact) Home
+      router-link(to='/settings' active-class='active') Settings
+      router-link(to='/about' active-class='active') About
     Flex
       Button Sing Up
       Button(active) Sing In
@@ -18,5 +18,11 @@ export default {
 
 <style lang='scss'>
 .nav {
+}
+</style>
+
+<style lang='scss' scoped>
+.active {
+  font-weight: 700;
 }
 </style>
