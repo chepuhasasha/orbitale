@@ -1,7 +1,7 @@
 <template lang='pug'>
   Flex(col)
     Card
-    Button
+    Button(icon='eye') Button
 </template>
 
 <script>
