@@ -5,8 +5,7 @@
         h5 Header
     Flex.card_header(fillW col padding='0')
       slot(name='body')
-        span body
-        span body
+        p body
 </template>
 
 <script>
