@@ -15,6 +15,10 @@ export default {
       type: String,
       default: 'div'
     },
+    gridArea: {
+      type: String,
+      default: '1/1/2/2'
+    },
     col: {
       type: Boolean,
       default: false
@@ -93,6 +97,7 @@ export default {
       result.alignItems = this.align
       result.alignSelf = this.alignSelf
       result.justifyContent = this.justify
+      result.gridArea = this.gridArea
       return result
     }
   },

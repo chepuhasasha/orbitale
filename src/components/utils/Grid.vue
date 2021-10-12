@@ -1,5 +1,6 @@
 <template lang='pug'>
   .grid(:style='getStyle')
+    slot
 </template>
 
 <script>
@@ -36,5 +37,9 @@ export default {
   display: grid;
   height: 100%;
   width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 20px;
+  background: #f1f3f6;
 }
 </style>

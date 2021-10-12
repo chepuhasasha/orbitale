@@ -12,10 +12,12 @@ import App from './App.vue'
 import Flex from '@/components/utils/Flex.vue'
 import Grid from '@/components/utils/Grid.vue'
 import Button from '@/components/UI/Button.vue'
+import Card from '@/components/UI/Card.vue'
 
 Vue.component('Flex', Flex)
 Vue.component('Grid', Grid)
 Vue.component('Button', Button)
+Vue.component('Card', Card)
 
 library.add(fas);
 library.add(fab);

@@ -1,11 +1,14 @@
 <template lang='pug'>
   Flex.card(col padding='20px' v-bind='$attrs')
     Flex.card_header(fillW padding='0')
-      slot(name='header')
-        h5 Header
-    Flex.card_body(fillW col padding='0' tag='section')
+      h5
+        slot(name='header') Header
+    Flex.card_body(fillW fillH col padding='0' tag='section')
       slot(name='body')
         p body
+    Flex.card_footer(padding='0' fillW justify='end')
+      slot(name='footer')
+        p footer
 </template>
 
 <script>
@@ -16,7 +19,7 @@ export default {
 
 <style lang='scss'>
 .card {
-  background: #f1f3f6;
+  background: white;
   border-radius: 20px;
 }
 </style>
