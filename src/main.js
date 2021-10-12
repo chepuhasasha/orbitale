@@ -8,9 +8,14 @@ import store from './store'
 import router from './router'
 import App from './App.vue'
 
+import Flex from '@/templates/Flex.vue'
+import Grid from '@/templates/Grid.vue'
+
+Vue.component('Flex', Flex)
+Vue.component('Grid', Grid)
+
 library.add(fas);
 library.add(fab);
-
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 Vue.config.productionTip = false
