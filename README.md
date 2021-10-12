@@ -1,4 +1,4 @@
-![Caver](https://github.com/sashachepuha/orbitale/blob/446d7690772e5eefd56df64d9529eb6ac4c1cc8f/caver.png)
+![Caver](./.github/caver.png)
 
 ## Project setup
 ```
