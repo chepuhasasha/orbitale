@@ -1,22 +1,16 @@
 <template lang='pug'>
-  Flex.card(:col='true')
-    span A
-    span B
-    Flex.card
-      span A
-      span B
-      Flex.card
-        
+  Card
 </template>
 
 <script>
 export default {
   name: 'Home',
+  components: {
+    Card: () => import('@/components/UI/Card.vue')
+  }
 }
 </script>
 
 <style lang='scss'>
-.card {
-  border: 1px solid black;
-}
+
 </style>
