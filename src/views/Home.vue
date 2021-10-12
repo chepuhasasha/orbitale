@@ -5,6 +5,7 @@
     Flex.card
       span A
       span B
+      Flex.card
         
 </template>
 

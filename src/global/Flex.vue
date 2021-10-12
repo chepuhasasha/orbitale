@@ -1,6 +1,10 @@
 <template lang='pug'>
   .flex(:style='getStyle')
-    slot add content.
+    slot
+      .flex_plug
+      .flex_plug
+      .flex_plug
+      .flex_plug
 </template>
 
 <script>
@@ -43,9 +47,13 @@ export default {
       type: Number,
       default: 10
     },
-    aligment: {
+    align: {
       type: String,
-      default: 'LT'
+      default: 'left'
+    },
+    justify: {
+      type: String,
+      default: 'left'
     }
   },
 
@@ -74,17 +82,8 @@ export default {
       if(this.h) {
         result.height = `${this.h}px`
       }
-      if(this.col){
-        switch (this.aligment) {
-          case 'LT':
-            result.alignItems = 'flex-start'
-            result.justifyContent = 'left'
-            break;
-        
-          default:
-            break;
-        }
-      }
+      result.alignItems = this.align
+      result.justifyContent = this.justify
       return result
     }
   },
@@ -99,5 +98,14 @@ export default {
 .flex {
   display: flex;
   position: relative;
+  &_plug {
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    background: #a0a0a0;
+  }
 }
 </style>
