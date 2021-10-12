@@ -28,6 +28,8 @@ export default {
 </script>
 <style lang="scss">
 .button {
+  background:rgb(0, 174, 255);
+  color: white;
 }
 </style>
 
